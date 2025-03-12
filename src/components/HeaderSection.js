@@ -1,8 +1,11 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet, Platform,Image } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
+import { useNavigation } from "@react-navigation/native";
+
 
 const HeaderSection = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.leftSection}>
@@ -15,7 +18,7 @@ const HeaderSection = () => {
           <Text style={styles.location}>H-70, Sector 63, Noida</Text>
         </View>
       </View>
-      <TouchableOpacity style={styles.notificationContainer}>
+      <TouchableOpacity onPress={() => navigation.navigate("Notification")} style={styles.notificationContainer}>
         <Icon name="notifications-outline" size={24} color="black" />
         <View style={styles.notificationDot} />
       </TouchableOpacity>

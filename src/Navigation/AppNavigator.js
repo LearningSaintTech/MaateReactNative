@@ -10,6 +10,15 @@ import Dashboard from '../Screens/Auth/Dashboard';
 import Setting from '../Screens/Auth/Setting';
 import Profile from '../Screens/Auth/Profile';
 import FoodDetail from '../Screens/Auth/FoodDetail';
+import ProfileInfoScreen from '../Screens/Auth/ProfileInfoScreen';
+import EditProfileScreen from '../Screens/Auth/EditProfileScreen';
+import AddressScreen from '../Screens/Auth/AddressScreen';
+import AddAddressScreen from '../Screens/Auth/AddAddressScreen';
+import CartScreen from '../Screens/Auth/CartScreen';
+import NotificationScreen from '../Screens/Auth/NotificationScreen';
+import FavScreen from '../Screens/Auth/FavScreen';
+import MyOrderScreen from '../Screens/Auth/MyOrderScreen';
+import OfferScreen from '../Screens/Auth/OfferScreen';
 
 const Stack = createStackNavigator();
 const AppNavigator = () => {
@@ -28,6 +37,15 @@ const AppNavigator = () => {
         <Stack.Screen name="Setting" component={Setting}/>
         <Stack.Screen name="Profile" component={Profile}/>
         <Stack.Screen name="FoodDetail" component={FoodDetail}/>
+        <Stack.Screen name="ProfileInfo" component={ProfileInfoScreen}/>
+        <Stack.Screen name="EditProfile" component={EditProfileScreen}/>
+        <Stack.Screen name="Address" component={AddressScreen}/>
+        <Stack.Screen name="AddAddress" component={AddAddressScreen}/>
+        <Stack.Screen name="Cart" component={CartScreen}/>
+        <Stack.Screen name="Notification" component={NotificationScreen}/>
+        <Stack.Screen name="Fav" component={FavScreen}/>
+        <Stack.Screen name="MyOrder" component={MyOrderScreen}/>
+        <Stack.Screen name="Offer" component={OfferScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -71,11 +71,7 @@ const Verification = () => {
           Resend Code
         </Text>
       </TouchableOpacity>
-      {/* <TouchableOpacity   onPress={()=>navigation.navigate('Dashboard')} style={styles.confirmButton}>
-        <Text style={styles.confirmText}>Confirm OTP ➤</Text>
-      </TouchableOpacity> */}
-
-
+      
       <View style={styles.overlay}>
               <TouchableOpacity
                 style={styles.button}
