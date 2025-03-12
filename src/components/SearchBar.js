@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderWidth: 1,
     borderColor: "#DDD",
-    marginLeft: 10,  // Ensure it is outside the search box
+    marginLeft: 10,  
   },
   filterIcon: {
     width: 22,

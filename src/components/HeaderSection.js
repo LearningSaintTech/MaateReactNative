@@ -7,7 +7,7 @@ const HeaderSection = () => {
     <View style={styles.container}>
       <View style={styles.leftSection}>
         <View style={styles.locationIconContainer}>
-          {/* <Icon name="location-outline" size={22} color="#FF3D00" /> */}
+       
           <Image source={require("../assets/images/location.png")} style={styles.locationImage} />
         </View>
         <View>

@@ -110,7 +110,7 @@ import Icon from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
 
 const FoodCard = ({ item }) => {
-  const navigation = useNavigation(); // Get navigation object
+  const navigation = useNavigation();
 
   return (
     <TouchableOpacity 

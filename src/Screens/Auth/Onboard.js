@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  
   View,
   Text,
   Image,
@@ -9,6 +10,7 @@ import {
   Dimensions,
 } from "react-native";
 const { width, height } = Dimensions.get("window");
+import Icon from "react-native-vector-icons/Ionicons";
 
 const Onboard = ({ navigation }) => {
   const theme = useColorScheme();
@@ -26,7 +28,13 @@ const Onboard = ({ navigation }) => {
         <TouchableOpacity
           style={styles.button}
           onPress={() => navigation.navigate("Login")}>
-          <Text style={styles.buttonText}>Continue ➤</Text>
+          <Text style={styles.buttonText}>Continue </Text>
+          <Image 
+            source={require("../../assets/icons/arrow.png")}  
+            style={styles.icon} 
+            resizeMode="contain"
+          />
+
         </TouchableOpacity>
       </View>
     </View>
@@ -37,6 +45,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  icon: {
+   
+    marginLeft: 5, 
+  },
   image: {
     width: "100%",
     height: "100%", 
@@ -44,15 +56,16 @@ const styles = StyleSheet.create({
   },
   overlay: {
     position: "absolute",
-    bottom: height * 0.12,
+    bottom: height * 0.08,
     width: "100%",
     alignItems: "center",
   },
   button: {
+    flexDirection: "row",  
     backgroundColor: "#FF3D00",
-    paddingVertical: 14,
-    paddingHorizontal: 100,
-    borderRadius: 10,
+    paddingVertical: 15,
+    paddingHorizontal: 120,
+    borderRadius: 15,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.3,

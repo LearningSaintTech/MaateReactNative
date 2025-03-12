@@ -8,7 +8,7 @@ const WeeklyMenuTabs = ({ onBackPress }) => {
   const [activeDay, setActiveDay] = useState("Monday");
   return (
     <View style={styles.wrapper}>
-      {/* Back Icon + Weekly Menu Title */}
+    
       <View style={styles.header}>
        
         <Text style={styles.heading}>Weekly Menu</Text>
@@ -17,7 +17,7 @@ const WeeklyMenuTabs = ({ onBackPress }) => {
         </TouchableOpacity>
       </View>
 
-      {/* Scrollable Weekly Tabs */}
+    
       <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.container}>
         {days.map((day, index) => (
           <TouchableOpacity
