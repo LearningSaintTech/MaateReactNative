@@ -16,7 +16,7 @@ const Register = ({ navigation }) => {
   const [mobile, setMobile] = useState("");
 
   const handleSignUp = () => {
-    navigation.navigate("Verification"); // Navigate after Signup
+    navigation.navigate("Verification"); 
   };
 
   return (
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "#FF3D00",
     paddingVertical: 15,
-    paddingHorizontal: 100,
+    paddingHorizontal: 120,
     borderRadius: 15,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 4 },

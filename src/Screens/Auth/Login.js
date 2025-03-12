@@ -288,7 +288,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",  
     backgroundColor: "#FF3D00",
     paddingVertical: 15,
-    paddingHorizontal: 120,
+    paddingHorizontal: 130,
     borderRadius: 15,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 4 },
@@ -304,3 +304,5 @@ const styles = StyleSheet.create({
 });
 
 export default Login;
+
+

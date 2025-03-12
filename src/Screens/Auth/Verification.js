@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
+  Image,
   View,
   Text,
   TextInput,
@@ -70,9 +71,24 @@ const Verification = () => {
           Resend Code
         </Text>
       </TouchableOpacity>
-      <TouchableOpacity   onPress={()=>navigation.navigate('Dashboard')} style={styles.confirmButton}>
+      {/* <TouchableOpacity   onPress={()=>navigation.navigate('Dashboard')} style={styles.confirmButton}>
         <Text style={styles.confirmText}>Confirm OTP ➤</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
+
+
+      <View style={styles.overlay}>
+              <TouchableOpacity
+                style={styles.button}
+                onPress={() => navigation.navigate("Dashboard")}>
+                <Text style={styles.buttonText}>Confirm OTP </Text>
+                <Image 
+                  source={require("../../assets/icons/arrow.png")}  
+                  style={styles.icon} 
+                  resizeMode="contain"
+                />
+      
+              </TouchableOpacity>
+            </View>
     </View>
   );
 };
@@ -150,6 +166,31 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   confirmText: {
+    fontSize: 18,
+    color: "#FFF",
+    fontWeight: "600",
+  },
+
+
+  overlay: {
+    position: "absolute",
+    bottom: height * 0.08,
+    width: "100%",
+    alignItems: "center",
+  },
+  button: {
+    flexDirection: "row",  
+    backgroundColor: "#FF3D00",
+    paddingVertical: 15,
+    paddingHorizontal: 120,
+    borderRadius: 15,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+    elevation: 5, 
+  },
+  buttonText: {
     fontSize: 18,
     color: "#FFF",
     fontWeight: "600",
