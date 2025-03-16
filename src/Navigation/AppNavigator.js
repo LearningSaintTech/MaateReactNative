@@ -19,6 +19,8 @@ import NotificationScreen from '../Screens/Auth/NotificationScreen';
 import FavScreen from '../Screens/Auth/FavScreen';
 import MyOrderScreen from '../Screens/Auth/MyOrderScreen';
 import OfferScreen from '../Screens/Auth/OfferScreen';
+import Payment from '../components/Payment';
+import Myorder from '../components/Myorder';
 
 const Stack = createStackNavigator();
 const AppNavigator = () => {
@@ -46,6 +48,8 @@ const AppNavigator = () => {
         <Stack.Screen name="Fav" component={FavScreen}/>
         <Stack.Screen name="MyOrder" component={MyOrderScreen}/>
         <Stack.Screen name="Offer" component={OfferScreen}/>
+        <Stack.Screen name="Payment" component={Payment}/>
+        <Stack.Screen name="Myorder" component={Myorder}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -9,22 +8,22 @@ import {
   Image,
   useColorScheme,
   Dimensions,
-} from "react-native";
-import { validateMobileNumber } from "../../utils/validator"; 
-const { width, height } = Dimensions.get("window");
+} from 'react-native';
+import {validateMobileNumber} from '../../utils/validator';
+const {width, height} = Dimensions.get('window');
 
-const Login = ({ navigation }) => {
+const Login = ({navigation}) => {
   const theme = useColorScheme();
-  const [activeTab, setActiveTab] = useState("login");
-  const [mobile, setMobile] = useState("");
-  const [fullName, setFullName] = useState(""); 
-  const [error, setError] = useState("");
+  const [activeTab, setActiveTab] = useState('login');
+  const [mobile, setMobile] = useState('');
+  const [fullName, setFullName] = useState('');
+  const [error, setError] = useState('');
 
   const handleLogin = () => {
-    if (activeTab === "login") {
-      navigation.navigate("Verification");
+    if (activeTab === 'login') {
+      navigation.navigate('Verification');
     } else {
-      navigation.navigate("Verification");
+      navigation.navigate('Verification');
     }
   };
 
@@ -32,17 +31,19 @@ const Login = ({ navigation }) => {
     <View
       style={[
         styles.container,
-        theme === "dark" ? styles.darkBackground : styles.lightBackground,
-      ]}
-    >
-      
+        theme === 'dark' ? styles.darkBackground : styles.lightBackground,
+      ]}>
       <TouchableOpacity style={styles.skipButton}>
         <Text style={styles.skipText}>Skip</Text>
+        <Image
+          source={require('../../assets/icons/rightIcon.png')}
+          style={styles.iconStyle}
+        />
       </TouchableOpacity>
 
       <View style={styles.logoContainer}>
         <Image
-          source={require("../../assets/images/Splash.png")}
+          source={require('../../assets/images/Splash.png')}
           style={styles.logo}
           resizeMode="contain"
         />
@@ -51,29 +52,31 @@ const Login = ({ navigation }) => {
       <View style={styles.whiteCard}>
         <View style={styles.tabContainer}>
           <TouchableOpacity
-            style={[styles.tabButton, activeTab === "login" && styles.activeTab]}
-            onPress={() => setActiveTab("login")}
-          >
+            style={[
+              styles.tabButton,
+              activeTab === 'login' && styles.activeTab,
+            ]}
+            onPress={() => setActiveTab('login')}>
             <Text
               style={[
                 styles.tabText,
-                activeTab === "login" && styles.activeTabText,
-              ]}
-            >
+                activeTab === 'login' && styles.activeTabText,
+              ]}>
               Login
             </Text>
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={[styles.tabButton, activeTab === "signup" && styles.activeTab]}
-            onPress={() => setActiveTab("signup")}
-          >
+            style={[
+              styles.tabButton,
+              activeTab === 'signup' && styles.activeTab,
+            ]}
+            onPress={() => setActiveTab('signup')}>
             <Text
               style={[
                 styles.tabText,
-                activeTab === "signup" && styles.activeTabText,
-              ]}
-            >
+                activeTab === 'signup' && styles.activeTabText,
+              ]}>
               Sign-up
             </Text>
           </TouchableOpacity>
@@ -87,19 +90,19 @@ const Login = ({ navigation }) => {
           placeholder="+91"
           keyboardType="phone-pad"
           maxLength={10}
-          placeholderTextColor="#888"
-          onChangeText={(text) => setMobile(text)}
+          placeholderTextColor="#DDDDDDDD"
+          onChangeText={text => setMobile(text)}
         />
         {error ? <Text style={styles.errorText}>{error}</Text> : null}
 
-        {activeTab === "signup" && (
+        {activeTab === 'signup' && (
           <>
             <Text style={styles.inputLabel}>Full Name</Text>
             <TextInput
               style={styles.input}
               placeholder="John Smith"
               placeholderTextColor="#888"
-              onChangeText={(text) => setFullName(text)}
+              onChangeText={text => setFullName(text)}
             />
           </>
         )}
@@ -112,24 +115,24 @@ const Login = ({ navigation }) => {
 
         <TouchableOpacity style={styles.googleButton}>
           <Image
-            source={require("../../assets/images/Google.png")}
+            source={require('../../assets/images/Google.png')}
             style={styles.googleIcon}
           />
           <Text style={styles.googleText}>Continue with Google</Text>
         </TouchableOpacity>
       </View>
 
-     
-
-
-<View style={styles.overlay}>
-        <TouchableOpacity style={styles.button} onPress={handleLogin} activeOpacity={0.8}>
+      <View style={styles.overlay}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={handleLogin}
+          activeOpacity={0.8}>
           <Text style={styles.buttonText}>
-            {activeTab === "login" ? "Login" : "Sign-Up"}
+            {activeTab === 'login' ? 'Login' : 'Sign-Up'}
           </Text>
-          <Image 
-            source={require("../../assets/icons/arrow.png")}  
-            style={styles.icon} 
+          <Image
+            source={require('../../assets/icons/arrow.png')}
+            style={styles.icon}
             resizeMode="contain"
           />
         </TouchableOpacity>
@@ -141,33 +144,41 @@ const Login = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
+    alignItems: 'center',
   },
   lightBackground: {
-    backgroundColor: "#F5F5F5",
+    backgroundColor: '#F5F5F5',
   },
   darkBackground: {
-    backgroundColor: "#1E1E1E",
+    backgroundColor: '#1E1E1E',
+  },
+
+  iconStyle: {
+    width: 10,
+    height: 10,
+    marginLeft: 8,
   },
   skipButton: {
-    position: "absolute",
+    position: 'absolute',
     top: height * 0.06,
     right: 20,
     paddingVertical: 5,
     paddingHorizontal: 15,
     borderRadius: 20,
     borderWidth: 1,
-    borderColor: "#FF3D00",
+    borderColor: '#FF3D00',
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   skipText: {
-    color: "#FF3D00",
-    fontWeight: "bold",
+    color: '#FF3D00',
+    fontWeight: 'bold',
     fontSize: 14,
   },
   logoContainer: {
     width: width * 0.9,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     marginTop: height * 0.2,
   },
   logo: {
@@ -176,82 +187,83 @@ const styles = StyleSheet.create({
   },
   whiteCard: {
     width: width * 0.9,
-    backgroundColor: "#FFF",
+    backgroundColor: '#FFF',
     borderRadius: 20,
     paddingBottom: 20,
-    alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 5,
-    elevation: 3,
-    marginTop: 80,
-  },
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 10, height: 1 }, // Increased height to emphasize bottom shadow
+    shadowOpacity: 0.3, // Adjust opacity for better visibility
+    shadowRadius: 6, // Spread shadow downwards more
+    marginTop: 50,
+    overflow: 'hidden', // Ensures shadow does not apply to rounded corners
+  }
+,  
+  
   tabContainer: {
-    flexDirection: "row",
-    width: "100%",
-    justifyContent: "space-around",
+    flexDirection: 'row',
+    width: '100%',
+    justifyContent: 'space-around',
   },
   tabButton: {
     paddingVertical: 15,
-    width: "40%",
-    alignItems: "center",
+    width: '40%',
+    alignItems: 'center',
   },
   activeTab: {
     borderBottomWidth: 3,
-    borderBottomColor: "#FF3D00",
+    borderBottomColor: '#FF3D00',
   },
   tabText: {
     fontSize: 16,
-    color: "rgba(0, 0, 0, 1)",
-    fontWeight: "500",
+    color: 'rgba(0, 0, 0, 1)',
+    fontWeight: '500',
   },
   activeTabText: {
-    color: "rgba(0, 0, 0, 1)",
-    fontWeight: "bold",
+    color: 'rgba(0, 0, 0, 1)',
+    fontWeight: 'bold',
   },
   form: {
-    width: "90%",
+    width: '90%',
     marginTop: 20,
   },
   inputLabel: {
     fontSize: 14,
-    color: "#666",
+    color: 'black',
     marginTop: 15,
   },
   input: {
-    width: "100%",
+    width: '100%',
     paddingVertical: 12,
     paddingHorizontal: 15,
-    borderBottomWidth: 1,
-    borderBottomColor: "#AAA",
+    borderBottomWidth: 1/2,
+    borderBottomColor: '#AFAFAF',
     fontSize: 16,
-    color: "#000",
+    color: '#000',
   },
   orContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginVertical: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 25,
+    marginHorizontal: 40,
   },
   line: {
     flex: 1,
     height: 1,
-    backgroundColor: "#CCC",
+    backgroundColor: '#D9D9D9',
   },
   orText: {
     marginHorizontal: 10,
     fontSize: 14,
-    color: "#555",
+    color: '#555',
   },
   googleButton: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#FFF",
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#FFF',
     borderRadius: 8,
     paddingVertical: 13,
-    borderWidth: 1,
-    borderColor: "#AAA",
   },
   googleIcon: {
     width: 20,
@@ -260,49 +272,47 @@ const styles = StyleSheet.create({
   },
   googleText: {
     fontSize: 16,
-    fontWeight: "500",
-    color: "#555",
+    fontWeight: '500',
+    color: '#555',
   },
   loginButton: {
-    position: "absolute",
+    position: 'absolute',
     bottom: height * 0.05,
-    width: "90%",
-    backgroundColor: "#FF3D00",
+    width: '90%',
+    backgroundColor: '#FF3D00',
     paddingVertical: 14,
     borderRadius: 12,
-    alignItems: "center",
+    alignItems: 'center',
     elevation: 5,
   },
   loginText: {
     fontSize: 18,
-    color: "#FFF",
-    fontWeight: "600",
+    color: '#FFF',
+    fontWeight: '600',
   },
   overlay: {
-    position: "absolute",
+    position: 'absolute',
     bottom: height * 0.08,
-    width: "100%",
-    alignItems: "center",
+    width: '100%',
+    alignItems: 'center',
   },
   button: {
-    flexDirection: "row",  
-    backgroundColor: "#FF3D00",
+    flexDirection: 'row',
+    backgroundColor: '#FF3D00',
     paddingVertical: 15,
     paddingHorizontal: 130,
     borderRadius: 15,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 4 },
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 4},
     shadowOpacity: 0.3,
     shadowRadius: 5,
-    elevation: 5, 
+    elevation: 5,
   },
   buttonText: {
     fontSize: 18,
-    color: "#FFF",
-    fontWeight: "600",
+    color: '#FFF',
+    fontWeight: '600',
   },
 });
 
 export default Login;
-
-

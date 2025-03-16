@@ -10,14 +10,14 @@ const NotificationScreen = () => {
 
   return (
     <View style={styles.container}>
-      {/* Back Button */}
+   
       <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
         <Ionicons name="arrow-back" size={24} color="orangered" />
       </TouchableOpacity>
 
       <Text style={styles.headerText}>Notification</Text>
 
-      {/* Notifications List */}
+     
       <FlatList
         data={notifications}
         keyExtractor={(item, index) => index.toString()}

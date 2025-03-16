@@ -1,188 +1,4 @@
-// import React from "react";
-// import {
-//   ScrollView,
-//   View,
-//   TouchableOpacity,
-//   Text,
-//   StyleSheet,
-//   Image,
-//   FlatList
-// } from "react-native";
-// import HeaderSection from "../../components/HeaderSection";
-// import BottomTabBar from "../../components/BottomTabBar";
-// import { MaterialIcons } from "@expo/vector-icons"; // Importing star icon
-
-// const orders = [
-//   {
-//     id: "1",
-//     name: "Burger Bistro",
-//     location: "Rose garden",
-//     price: "50",
-//     originalPrice: "99", // Original price before discount
-//     image: require("../../assets/images/Burger.png"),
-//   },
-//   {
-//     id: "2",
-//     name: "Burger Bistro",
-//     location: "Rose garden",
-//     price: "50",
-//     originalPrice: "99",
-//     image: require("../../assets/images/Banner1.png"),
-//   },
-//   {
-//     id: "3",
-//     name: "Burger Bistro",
-//     location: "Rose garden",
-//     price: "50",
-//     originalPrice: "99",
-//     image: require("../../assets/images/Banner2.png"),
-//   },
-//   {
-//     id: "4",
-//     name: "Burger Bistro",
-//     location: "Rose garden",
-//     price: "50",
-//     originalPrice: "99",
-//     image: require("../../assets/images/Banner3.png"),
-//   },
-//   {
-//     id: "5",
-//     name: "Burger Bistro",
-//     location: "Rose garden",
-//     price: "50",
-//     originalPrice: "99",
-//     image: require("../../assets/images/Banner4.png"),
-//   },
-// ];
-
-// const MyOrderScreen = () => {
-//   return (
-//     <View style={{ flex: 1, backgroundColor: "#fff" }}>
-//       <ScrollView showsVerticalScrollIndicator={false}>
-//         <HeaderSection />
-
-//         {/* My Orders Button */}
-//         <TouchableOpacity style={styles.orderButton}>
-//           <Text style={styles.buttonText}>My Orders</Text>
-//         </TouchableOpacity>
-
-//         {/* Orders List */}
-//         <View style={styles.orderContainer}>
-//           <FlatList
-//             data={orders}
-//             keyExtractor={(item) => item.id}
-//             renderItem={({ item }) => (
-//               <View style={styles.orderItem}>
-//                 <Image source={item.image} style={styles.image} />
-//                 <View style={styles.orderDetails}>
-//                   <Text style={styles.orderName}>{item.name}</Text>
-//                   <Text style={styles.orderLocation}>{item.location}</Text>
-
-//                   {/* Price Section */}
-//                   <View style={styles.priceContainer}>
-//                     <Text style={styles.orderPrice}>₹{item.price}</Text>
-//                     <Text style={styles.originalPrice}>₹{item.originalPrice}</Text>
-//                   </View>
-
-//                   {/* Star Rating */}
-//                   <View style={styles.ratingContainer}>
-//                     <MaterialIcons name="star" size={16} color="#FFD700" />
-//                     <Text style={styles.ratingText}> 5.0 Rating</Text>
-//                   </View>
-//                 </View>
-//               </View>
-//             )}
-//           />
-//         </View>
-//       </ScrollView>
-//       <BottomTabBar />
-//     </View>
-//   );
-// };
-
-// const styles = StyleSheet.create({
-//   orderButton: {
-//     marginTop: 20,
-//     alignSelf: "center",
-//     paddingVertical: 12,
-//     paddingHorizontal: 40,
-//     borderWidth: 2,
-//     borderColor: "#ff6600",
-//     borderRadius: 10,
-//   },
-//   buttonText: {
-//     color: "#ff6600",
-//     fontSize: 16,
-//     fontWeight: "bold",
-//   },
-//   orderContainer: {
-//     marginTop: 20,
-//     marginHorizontal: 20,
-//     backgroundColor: "#fff",
-//     borderRadius: 10,
-//     padding: 10,
-//     shadowColor: "#000",
-//     shadowOpacity: 0.1,
-//     shadowRadius: 5,
-//     shadowOffset: { width: 0, height: 2 },
-//     elevation: 5,
-//   },
-//   orderItem: {
-//     flexDirection: "row",
-//     alignItems: "center",
-//     padding: 10,
-//     borderBottomWidth: 1,
-//     borderBottomColor: "#ddd",
-//   },
-//   image: {
-//     width: 60,
-//     height: 60,
-//     borderRadius: 10,
-//     marginRight: 10,
-//   },
-//   orderDetails: {
-//     flex: 1,
-//   },
-//   orderName: {
-//     fontSize: 16,
-//     fontWeight: "bold",
-//     color: "#ff6600",
-//   },
-//   orderLocation: {
-//     fontSize: 14,
-//     color: "#777",
-//   },
-//   priceContainer: {
-//     flexDirection: "row",
-//     alignItems: "center",
-//     marginTop: 5,
-//   },
-//   orderPrice: {
-//     fontSize: 16,
-//     fontWeight: "bold",
-//     color: "#333",
-//   },
-//   originalPrice: {
-//     fontSize: 14,
-//     color: "#999",
-//     textDecorationLine: "line-through",
-//     marginLeft: 8,
-//   },
-//   ratingContainer: {
-//     flexDirection: "row",
-//     alignItems: "center",
-//     marginTop: 5,
-//   },
-//   ratingText: {
-//     fontSize: 14,
-//     color: "#777",
-//   },
-// });
-
-// export default MyOrderScreen;
-
-
-import React from "react";
+import React from 'react';
 import {
   ScrollView,
   View,
@@ -190,138 +6,209 @@ import {
   Text,
   StyleSheet,
   Image,
-  FlatList
-} from "react-native";
-import HeaderSection from "../../components/HeaderSection";
-import BottomTabBar from "../../components/BottomTabBar";
-import Icon from "react-native-vector-icons/MaterialIcons"; // Using react-native-vector-icons
+  FlatList,
+} from 'react-native';
+import HeaderSection from '../../components/HeaderSection';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import Entypo from 'react-native-vector-icons/Entypo';
 
 const orders = [
   {
-    id: "1",
-    name: "Burger Bistro",
-    location: "Rose garden",
-    price: "50",
-    originalPrice: "99",
-    image: require("../../assets/images/Burger.png"),
+    id: '1',
+    name: 'Burger Bistro',
+    location: 'Rose Garden',
+    price: '50',
+    originalPrice: '99',
+    image: require('../../assets/images/Burger.png'),
   },
   {
-    id: "2",
-    name: "Burger Bistro",
-    location: "Rose garden",
-    price: "50",
-    originalPrice: "99",
-    image: require("../../assets/images/Banner1.png"),
+    id: '2',
+    name: 'Pizza Palace',
+    location: 'City Square',
+    price: '120',
+    originalPrice: '199',
+    image: require('../../assets/images/Burger.png'),
   },
   {
-    id: "3",
-    name: "Burger Bistro",
-    location: "Rose garden",
-    price: "50",
-    originalPrice: "99",
-    image: require("../../assets/images/Banner2.png"),
+    id: '3',
+    name: 'Tandoori Junction',
+    location: 'Downtown',
+    price: '200',
+    originalPrice: '299',
+    image: require('../../assets/images/Burger.png'),
   },
   {
-    id: "4",
-    name: "Burger Bistro",
-    location: "Rose garden",
-    price: "50",
-    originalPrice: "99",
-    image: require("../../assets/images/Banner3.png"),
+    id: '4',
+    name: 'Pasta Point',
+    location: 'Green Park',
+    price: '150',
+    originalPrice: '220',
+    image: require('../../assets/images/Burger.png'),
   },
   {
-    id: "5",
-    name: "Burger Bistro",
-    location: "Rose garden",
-    price: "50",
-    originalPrice: "99",
-    image: require("../../assets/images/Banner4.png"),
+    id: '5',
+    name: 'Subway Delight',
+    location: 'Central Mall',
+    price: '90',
+    originalPrice: '150',
+    image: require('../../assets/images/Burger.png'),
+  },
+  {
+    id: '6',
+    name: 'Sushi Hub',
+    location: 'Tokyo Street',
+    price: '300',
+    originalPrice: '450',
+    image: require('../../assets/images/Burger.png'),
+  },
+  {
+    id: '7',
+    name: 'Grill House',
+    location: 'Lakeside View',
+    price: '250',
+    originalPrice: '350',
+    image: require('../../assets/images/Burger.png'),
+  },
+  {
+    id: '8',
+    name: 'Ice Cream World',
+    location: 'Beach Road',
+    price: '80',
+    originalPrice: '120',
+    image: require('../../assets/images/Burger.png'),
+  },
+  {
+    id: '9',
+    name: 'Dosa Delight',
+    location: 'South Street',
+    price: '60',
+    originalPrice: '110',
+    image: require('../../assets/images/Burger.png'),
+  },
+  {
+    id: '10',
+    name: 'Momo Junction',
+    location: 'Food Market',
+    price: '70',
+    originalPrice: '120',
+    image: require('../../assets/images/Burger.png'),
   },
 ];
 
-const MyOrderScreen = () => {
+const MyOrderScreen = ({navigation}) => {
   return (
-    <View style={{ flex: 1, backgroundColor: "#fff" }}>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <HeaderSection />
-
-        {/* My Orders Button */}
-        <TouchableOpacity style={styles.orderButton}>
-          <Text style={styles.buttonText}>My Orders</Text>
+    <View style={{flex: 1, backgroundColor: '#fff'}}>
+      <HeaderSection />
+      <View style={{marginHorizontal: 20}}>
+        <TouchableOpacity onPress={()=>navigation.navigate('Myorder')} style={styles.orderButton}>
+          <Text style={styles.orderButtonText}>My Orders</Text>
         </TouchableOpacity>
-
-        {/* Orders List */}
+      </View>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{flex: 1, marginBottom: 60}}>
         <View style={styles.orderContainer}>
           <FlatList
+            style={styles.orderCard}
             data={orders}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item }) => (
+            keyExtractor={item => item.id}
+            renderItem={({item}) => (
               <View style={styles.orderItem}>
-                <Image source={item.image} style={styles.image} />
+                <View>
+                  <Image source={item.image} style={styles.image} />
+                </View>
                 <View style={styles.orderDetails}>
                   <Text style={styles.orderName}>{item.name}</Text>
                   <Text style={styles.orderLocation}>{item.location}</Text>
-
-                  {/* Price Section */}
-                  <View style={styles.priceContainer}>
-                    <Text style={styles.orderPrice}>₹{item.price}</Text>
-                    <Text style={styles.originalPrice}>₹{item.originalPrice}</Text>
-                  </View>
-
-                  {/* Star Rating */}
                   <View style={styles.ratingContainer}>
-                    <Icon name="star" size={16} color="#FFD700" />
+                    <Icon name="star" size={14} color="#FFD700" />
                     <Text style={styles.ratingText}> 5.0 Rating</Text>
                   </View>
+                </View>
+                <View>
+                  <Text style={styles.orderPrice}>₹{item.price}</Text>
+                  <Text style={styles.originalPrice}>
+                    ₹{item.originalPrice}
+                  </Text>
                 </View>
               </View>
             )}
           />
         </View>
+
+        <View style={styles.summaryBox}>
+          {orders.map((item, index) => (
+            <View key={index}>
+              <View style={styles.summaryRow}>
+                <Text style={styles.summaryText}>{item.name}</Text>
+                <Text style={styles.summaryPrice}>₹{item.price}.00</Text>
+              </View>
+
+              {index !== orders.length - 1 && <View style={styles.divider} />}
+            </View>
+          ))}
+
+       
+          <View style={styles.summaryRow}>
+            <Text style={[styles.summaryText, styles.totalAmountText]}>
+              Total Amount
+            </Text>
+            <Text style={[styles.summaryPrice, styles.totalAmountPrice]}>
+              ₹250.00
+            </Text>
+          </View>
+        </View>
+        <View style={styles.forgetSection}>
+          <Text style={styles.forgetText}>Forget Something?</Text>
+          <TouchableOpacity style={styles.addMoreButton}>
+            <Text style={styles.addMoreText}>Add More Items</Text>
+          </TouchableOpacity>
+        </View>
+        <TouchableOpacity
+          style={styles.confirmButton}
+          onPress={() => navigation.navigate('Payment')}>
+          <Text style={styles.confirmButtonText}>Confirm Order</Text>
+          <Entypo name="chevron-right" size={20} color="#fff" />
+        </TouchableOpacity>
       </ScrollView>
-      <BottomTabBar />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   orderButton: {
-    marginTop: 20,
-    alignSelf: "center",
+    marginVertical: 20,
+    alignSelf: 'center',
     paddingVertical: 12,
-    paddingHorizontal: 40,
-    borderWidth: 2,
-    borderColor: "#ff6600",
-    borderRadius: 10,
+    width: '100%',
+    alignItems: 'center',
+    borderColor: '#ff6600',
+    borderWidth: 1,
+    borderRadius: 12,
   },
-  buttonText: {
-    color: "#ff6600",
+  orderButtonText: {
+    color: '#ff6600',
     fontSize: 16,
-    fontWeight: "bold",
+   
   },
   orderContainer: {
-    marginTop: 20,
     marginHorizontal: 20,
-    backgroundColor: "#fff",
-    borderRadius: 10,
-    padding: 10,
-    shadowColor: "#000",
-    shadowOpacity: 0.1,
-    shadowRadius: 5,
-    shadowOffset: { width: 0, height: 2 },
-    elevation: 5,
+  },
+  orderCard: {
+    backgroundColor: '#fff',
+    borderRadius: 15,
+    padding: 12,
+    marginBottom: 12,
+    borderColor: '#777',
+    borderWidth: 1,
   },
   orderItem: {
-    flexDirection: "row",
-    alignItems: "center",
-    padding: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: "#ddd",
+    flexDirection: 'row',
   },
   image: {
     width: 60,
     height: 60,
-    borderRadius: 10,
+    borderRadius: 15,
     marginRight: 10,
   },
   orderDetails: {
@@ -329,37 +216,112 @@ const styles = StyleSheet.create({
   },
   orderName: {
     fontSize: 16,
-    fontWeight: "bold",
-    color: "#ff6600",
+    fontWeight: 'bold',
+    color: '#ff6600',
   },
   orderLocation: {
     fontSize: 14,
-    color: "#777",
+    color: '#777',
   },
-  priceContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginTop: 5,
-  },
+
   orderPrice: {
-    fontSize: 16,
-    fontWeight: "bold",
-    color: "#333",
+    fontSize: 20,
+    fontWeight: '500',
+    color: '#8E8E8E',
   },
   originalPrice: {
-    fontSize: 14,
-    color: "#999",
-    textDecorationLine: "line-through",
+    fontSize: 16,
+    color: '#D2D2D2',
+    textDecorationLine: 'line-through',
     marginLeft: 8,
   },
   ratingContainer: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     marginTop: 5,
   },
   ratingText: {
     fontSize: 14,
-    color: "#777",
+    color: '#777',
+  },
+
+ 
+  summaryBox: {
+    marginTop: 20,
+    backgroundColor: '#fff',
+    marginHorizontal: 20,
+    borderRadius: 15,
+    padding: 12,
+    borderColor: '#777',
+    borderWidth: 1,
+  },
+  summaryRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingVertical: 6,
+  },
+  summaryText: {
+    fontSize: 14,
+    color: '#777',
+  },
+  summaryPrice: {
+    fontSize: 14,
+    color: '#777',
+  },
+  totalAmountText: {
+    fontWeight: 'bold',
+    color: '#ff6600',
+  },
+  totalAmountPrice: {
+    fontWeight: 'bold',
+    color: '#ff6600',
+  },
+
+ 
+  forgetSection: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginHorizontal: 20,
+    marginVertical: 15,
+  },
+  forgetText: {
+    fontSize: 14,
+    color: '#777',
+  },
+  addMoreButton: {
+    backgroundColor: '#444',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+  },
+  addMoreText: {
+    color: '#fff',
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+  divider: {
+    height: 1,
+    backgroundColor: '#E8E8E8',
+    marginHorizontal: 5,
+  },
+ 
+  confirmButton: {
+    marginTop: 20,
+    backgroundColor: '#FA4A0C',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 15,
+    marginHorizontal: 20,
+    borderRadius: 15,
+    marginBottom: 20,
+  },
+  confirmButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginRight: 10,
   },
 });
 
