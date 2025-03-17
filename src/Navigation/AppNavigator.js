@@ -6,7 +6,6 @@ import Onboard from '../Screens/Auth/Onboard';
 import Login from '../Screens/Auth/Login';
 import Register from '../Screens/Auth/Register';
 import Verification from '../Screens/Auth/Verification';
-import Dashboard from '../Screens/Auth/Dashboard';
 import Setting from '../Screens/Auth/Setting';
 import Profile from '../Screens/Auth/Profile';
 import FoodDetail from '../Screens/Auth/FoodDetail';
@@ -23,11 +22,14 @@ import Payment from '../components/Payment';
 import Myorder from '../components/Myorder';
 import BottomTabBar from '../components/BottomTabBar';
 import TrackOrderScreen from '../Screens/Auth/TrackOrderScreen';
+import { Provider } from "react-redux";
+import store from "./redux/store"; 
 
 const Stack = createStackNavigator();
 const AppNavigator = () => {
 
   return (
+    <Provider store={store}>
     <NavigationContainer>
       <Stack.Navigator 
         initialRouteName="Splash" 
@@ -55,6 +57,7 @@ const AppNavigator = () => {
         <Stack.Screen name="TrackOrder" component={TrackOrderScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
+    </Provider>
   );
 };
 export default AppNavigator;

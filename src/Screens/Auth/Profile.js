@@ -8,21 +8,11 @@ import {
   ScrollView 
 } from "react-native";
 import { useNavigation } from "@react-navigation/native"; 
-import IonIcon from "react-native-vector-icons/Ionicons";
-import IonIcon from "react-native-vector-icons/Ionicons";
 
 const Profile = () => {
   const navigation = useNavigation(); 
-
-  return (
-    
+  return ( 
     <View style={styles.container}>
-      
-       {/* <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-              <IonIcon name="arrow-back" size={24} color="orangered" />
-            </TouchableOpacity> */}
-
-      {/* Profile Header Section */}
       <View style={styles.profileHeader}>
         <Image
           source={{ uri: "https://via.placeholder.com/80" }}
@@ -49,14 +39,12 @@ const Profile = () => {
             <Text style={styles.menuText}>Personal Info</Text>
             <Image source={require("../../assets/icons/arrow.png")} style={styles.chevronIcon} />
           </TouchableOpacity>
-
           <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate("Address")}>
             <Image source={require("../../assets/icons/address.png")} style={styles.menuIcon} />
             <Text style={styles.menuText}>Addresses</Text>
             <Image source={require("../../assets/icons/arrow.png")}style={styles.chevronIcon} />
           </TouchableOpacity>
         </View>
-
         {/* Second Section */}
         <View style={styles.menuContainer}>
           <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate("Cart")}>
