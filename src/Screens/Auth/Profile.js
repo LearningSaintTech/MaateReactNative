@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native"; 
 import IonIcon from "react-native-vector-icons/Ionicons";
+import IonIcon from "react-native-vector-icons/Ionicons";
 
 const Profile = () => {
   const navigation = useNavigation(); 
@@ -17,7 +18,10 @@ const Profile = () => {
     
     <View style={styles.container}>
       
-      
+       {/* <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+              <IonIcon name="arrow-back" size={24} color="orangered" />
+            </TouchableOpacity> */}
+
       {/* Profile Header Section */}
       <View style={styles.profileHeader}>
         <Image
