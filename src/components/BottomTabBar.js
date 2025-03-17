@@ -1,69 +1,77 @@
-import React, {useState} from 'react';
-import {View, TouchableOpacity, StyleSheet} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {useNavigation} from '@react-navigation/native';
+import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Image } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import HomeIcon from '../assets/images/Home.png';
+import OfferIcon from '../assets/images/Offer.png';
+import OrderIcon from '../assets/images/MyOrder.png';
+import ProfileIcon from '../assets/images/Profile.png';
+import Profile from '../Screens/Auth/Profile';
+import Myorder from './Myorder';
+import Dashboard from '../Screens/Auth/Dashboard';
+import OfferScreen from '../Screens/Auth/OfferScreen';
+import MyOrderScreen from '../Screens/Auth/MyOrderScreen';
+
+const Tab = createBottomTabNavigator();
 
 const BottomTabBar = () => {
   const insets = useSafeAreaInsets();
-  const navigation = useNavigation();
-  const [selectedTab, setSelectedTab] = useState('Dashboard');
-
-  const tabs = [
-    {name: 'Dashboard', icon: 'home-outline', activeIcon: 'home'},
-    {name: 'Offer', icon: 'settings-outline', activeIcon: 'settings'},
-    {name: 'MyOrder', icon: 'basket-outline', activeIcon: 'basket'},
-    {name: 'Profile', icon: 'person-outline', activeIcon: 'person'},
-  ];
 
   return (
-    <View style={[styles.container, {paddingBottom: insets.bottom}]}>
-      {tabs.map((tab, index) => (
-        <TouchableOpacity
-          key={index}
-          style={styles.tabButton}
-          onPress={() => {
-            setSelectedTab(tab.name);
-            navigation.navigate(tab.name);
-          }}>
-          <Icon
-            name={selectedTab === tab.name ? tab.activeIcon : tab.icon}
-            size={26}
-            color={selectedTab === tab.name ? '#ff4500' : '#b0b0b0'}
-          />
-        </TouchableOpacity>
-      ))}
-    </View>
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarStyle: {
+          backgroundColor: 'white',
+          borderTopWidth: 0,
+          height: 80 + insets.bottom, 
+          paddingBottom: insets.bottom, 
+          paddingTop: 15,
+          borderRadius: 10,
+          shadowColor: '#000',
+          shadowOffset: { width: 0, height: 4 },
+          shadowOpacity: 0.2,
+          shadowRadius: 4,
+          elevation: 5,
+        },
+        headerShown: false,
+        tabBarShowLabel: false,
+        tabBarIcon: ({ focused }) => {
+          let iconSource;
+
+          switch (route.name) {
+            case 'Dashboard':
+              iconSource = HomeIcon;
+              break;
+            case 'Offer':
+              iconSource = OfferIcon;
+              break;
+            case 'MyOrder':
+              iconSource = OrderIcon;
+              break;
+            case 'Profile':
+              iconSource = ProfileIcon;
+              break;
+          }
+
+          return (
+            <Image
+              source={iconSource}
+              style={{
+                width: 24,
+                height: 24,
+                tintColor: focused ? '#ff4500' : '#b0b0b0',
+              }}
+              resizeMode="contain"
+            />
+          );
+        },
+      })} >
+      <Tab.Screen name="Dashboard" component={Dashboard} />
+      <Tab.Screen name="Offer" component={OfferScreen} />
+      <Tab.Screen name="MyOrder" component={MyOrderScreen} />
+      <Tab.Screen name="Profile" component={Profile} />
+    </Tab.Navigator>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    position: 'absolute',
-    bottom: '5%',
-    width: '100%',
-    left: '2.5%',
-    right: '2.5%',
-    backgroundColor: 'white',
-    paddingVertical: 10,
-    paddingHorizontal: 10, // Add horizontal padding
-    borderRadius: 10, // Optional: Slightly rounded corners for a smoother look
-    shadowColor: '#000',
-    shadowOffset: {width: 0, height: 4}, // Move shadow downward
-    shadowOpacity: 0.2, // Adjust opacity for a soft effect
-    shadowRadius: 4,
-    elevation: 5, // Ensure shadow appears on Android
-    zIndex:100
-  },
-
-  tabButton: {
-    flex: 1,
-    alignItems: 'center',
-    padding: 10,
-  },
-});
 
 export default BottomTabBar;

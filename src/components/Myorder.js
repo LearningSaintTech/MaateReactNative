@@ -132,12 +132,10 @@ const Myorder = () => {
 
             <Text style={styles.orderItems}>{item.items}</Text>
           </View>
-
-         
         </View>
       </View>
       <View style={styles.buttonRow}>
-        <TouchableOpacity style={styles.trackButton}>
+        <TouchableOpacity onPress={()=>navigation.navigate('TrackOrder')} style={styles.trackButton}>
           <Text style={styles.trackText}>Track Order</Text>
         </TouchableOpacity>
 

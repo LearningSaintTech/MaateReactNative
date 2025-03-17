@@ -8,12 +8,16 @@ import {
   ScrollView 
 } from "react-native";
 import { useNavigation } from "@react-navigation/native"; 
+import IonIcon from "react-native-vector-icons/Ionicons";
 
 const Profile = () => {
   const navigation = useNavigation(); 
 
   return (
+    
     <View style={styles.container}>
+      
+      
       {/* Profile Header Section */}
       <View style={styles.profileHeader}>
         <Image
@@ -93,6 +97,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+  },
+  backButton: {
+    position: "absolute",
+    top: 10,
+    left: 10,
+    padding: 10, 
+    zIndex: 10,
   },
   profileHeader: {
     flexDirection: "row",

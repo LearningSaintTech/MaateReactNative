@@ -49,7 +49,6 @@ const OfferScreen = () => {
           contentContainerStyle={{paddingBottom: height * 0.12}} 
         />
       </View>
-      <BottomTabBar />
     </>
   );
 };

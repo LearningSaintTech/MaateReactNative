@@ -21,6 +21,8 @@ import MyOrderScreen from '../Screens/Auth/MyOrderScreen';
 import OfferScreen from '../Screens/Auth/OfferScreen';
 import Payment from '../components/Payment';
 import Myorder from '../components/Myorder';
+import BottomTabBar from '../components/BottomTabBar';
+import TrackOrderScreen from '../Screens/Auth/TrackOrderScreen';
 
 const Stack = createStackNavigator();
 const AppNavigator = () => {
@@ -35,7 +37,7 @@ const AppNavigator = () => {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="Verification" component={Verification} />
-        <Stack.Screen name="Dashboard" component={Dashboard}/>
+        <Stack.Screen name="Dashboard" component={BottomTabBar}/>
         <Stack.Screen name="Setting" component={Setting}/>
         <Stack.Screen name="Profile" component={Profile}/>
         <Stack.Screen name="FoodDetail" component={FoodDetail}/>
@@ -50,6 +52,7 @@ const AppNavigator = () => {
         <Stack.Screen name="Offer" component={OfferScreen}/>
         <Stack.Screen name="Payment" component={Payment}/>
         <Stack.Screen name="Myorder" component={Myorder}/>
+        <Stack.Screen name="TrackOrder" component={TrackOrderScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

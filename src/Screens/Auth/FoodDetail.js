@@ -94,7 +94,7 @@ const FoodDetail = () => {
             </TouchableOpacity>
           </View>
         </View>
-        <TouchableOpacity style={styles.addToCartButton}>
+        <TouchableOpacity  onPress={() => navigation.navigate('Payment')} style={styles.addToCartButton}>
           <Text style={styles.addToCartText}>Add To Cart</Text>
               <Image
                       source={require('../../assets/icons/arrow.png')}
@@ -232,7 +232,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 50,
-    backgroundColor: "rgba(255, 255, 255, 0.2)", // Transparent white for better blur
+    backgroundColor: "rgba(255, 255, 255, 0.2)", 
   },
 
   quantityText: {

@@ -25,7 +25,7 @@ const paymentMethods = [
 
 const Payment = () => {
   const navigation = useNavigation();
-  const [selectedMethod, setSelectedMethod] = useState('3'); // Default: Mastercard
+  const [selectedMethod, setSelectedMethod] = useState('3'); 
 
   return (
     <View style={styles.container}>
