@@ -187,3 +187,89 @@ const styles = StyleSheet.create({
 });
 
 export default Profile;
+
+
+
+
+
+
+// use of redux in profile screen 
+
+
+// import React from "react";
+// import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+// import { useSelector, useDispatch } from "react-redux";
+// import { updateProfilePicture, updatePhoneNumber } from "../redux/userSlice";
+
+// const Profile = () => {
+//   const user = useSelector((state) => state.user); // Get user data
+//   const dispatch = useDispatch();
+
+//   return (
+//     <View style={styles.container}>
+//       <Image
+//         source={{ uri: user.profilePicture || "https://via.placeholder.com/100" }}
+//         style={styles.profileImage}
+//       />
+//       <Text style={styles.name}>{user.name}</Text>
+//       <Text style={styles.email}>{user.email}</Text>
+//       <Text style={styles.phone}>📞 {user.phone}</Text>
+
+//       {/* Update Profile Picture */}
+//       <TouchableOpacity
+//         style={styles.button}
+//         onPress={() => dispatch(updateProfilePicture("https://new-image-url.com"))}
+//       >
+//         <Text style={styles.buttonText}>Change Profile Picture</Text>
+//       </TouchableOpacity>
+
+//       {/* Update Phone Number */}
+//       <TouchableOpacity
+//         style={styles.button}
+//         onPress={() => dispatch(updatePhoneNumber("+1234567890"))}
+//       >
+//         <Text style={styles.buttonText}>Update Phone Number</Text>
+//       </TouchableOpacity>
+//     </View>
+//   );
+// };
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     alignItems: "center",
+//     justifyContent: "center",
+//     backgroundColor: "#fff",
+//   },
+//   profileImage: {
+//     width: 100,
+//     height: 100,
+//     borderRadius: 50,
+//     marginBottom: 10,
+//   },
+//   name: {
+//     fontSize: 20,
+//     fontWeight: "bold",
+//   },
+//   email: {
+//     fontSize: 16,
+//     color: "#666",
+//   },
+//   phone: {
+//     fontSize: 16,
+//     marginVertical: 5,
+//   },
+//   button: {
+//     marginTop: 10,
+//     padding: 10,
+//     backgroundColor: "orangered",
+//     borderRadius: 5,
+//   },
+//   buttonText: {
+//     color: "#fff",
+//     fontSize: 16,
+//   },
+// });
+
+// export default Profile;
+

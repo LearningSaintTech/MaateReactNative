@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  name: "Guest",
+  name: "",
   email: "",
-  remainingAmount: 0,
+  phone: "",
+  profilePicture: "",
 };
 
 const userSlice = createSlice({
@@ -13,13 +14,17 @@ const userSlice = createSlice({
     setUser: (state, action) => {
       state.name = action.payload.name;
       state.email = action.payload.email;
-      state.remainingAmount = action.payload.remainingAmount;
+      state.phone = action.payload.phone;
+      state.profilePicture = action.payload.profilePicture;
     },
-    updateRemainingAmount: (state, action) => {
-      state.remainingAmount = action.payload;
+    updateProfilePicture: (state, action) => {
+      state.profilePicture = action.payload;
+    },
+    updatePhoneNumber: (state, action) => {
+      state.phone = action.payload;
     },
   },
 });
 
-export const { setUser, updateRemainingAmount } = userSlice.actions;
+export const { setUser, updateProfilePicture, updatePhoneNumber } = userSlice.actions;
 export default userSlice.reducer;

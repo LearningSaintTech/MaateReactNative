@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import { 
-  View, Text, TextInput, TouchableOpacity, Image, StyleSheet 
+import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet 
 } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import { useNavigation } from "@react-navigation/native"; // ✅ Import useNavigation
+import { useNavigation } from "@react-navigation/native"; 
 
 const EditProfileScreen = () => {
-  const navigation = useNavigation(); // ✅ Initialize navigation
+  const navigation = useNavigation();
   const [name, setName] = useState("John Smith");
   const [email, setEmail] = useState("xyz@gmail.com");
   const [phone, setPhone] = useState("+91");
@@ -18,7 +17,7 @@ const EditProfileScreen = () => {
       {/* Back Button */}
       <TouchableOpacity 
         style={styles.backButton} 
-        onPress={() => navigation.goBack()} // ✅ Navigates back
+        onPress={() => navigation.goBack()} 
       >
         <Ionicons name="arrow-back" size={24} color="orangered" />
       </TouchableOpacity>
@@ -161,3 +160,23 @@ const styles = StyleSheet.create({
 });
 
 export default EditProfileScreen;
+
+
+
+// To update user data, dispatch an action from any screen.
+
+// import { useDispatch } from "react-redux";
+// import { setUser } from "../redux/userSlice";
+
+// const dispatch = useDispatch();
+
+// dispatch(setUser({
+//   name: "Aditya Raj",
+//   email: "aditya@example.com",
+//   phone: "+91 9876543210",
+//   profilePicture: "https://example.com/profile.jpg"
+// }));
+
+
+
+

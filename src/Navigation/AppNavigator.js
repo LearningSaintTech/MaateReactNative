@@ -23,7 +23,7 @@ import Myorder from '../components/Myorder';
 import BottomTabBar from '../components/BottomTabBar';
 import TrackOrderScreen from '../Screens/Auth/TrackOrderScreen';
 import { Provider } from "react-redux";
-import store from "./redux/store"; 
+import store from "../Redux/store"; 
 
 const Stack = createStackNavigator();
 const AppNavigator = () => {

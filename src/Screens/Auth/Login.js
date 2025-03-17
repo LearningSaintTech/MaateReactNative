@@ -192,11 +192,11 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     alignItems: 'center',
     shadowColor: '#000',
-    shadowOffset: { width: 10, height: 1 }, // Increased height to emphasize bottom shadow
+    shadowOffset: { width: 10, height: 1 }, 
     shadowOpacity: 0.3, // Adjust opacity for better visibility
     shadowRadius: 6, // Spread shadow downwards more
     marginTop: 50,
-    overflow: 'hidden', // Ensures shadow does not apply to rounded corners
+    overflow: 'hidden', 
   }
 ,  
   
