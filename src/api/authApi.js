@@ -1,7 +1,7 @@
 import apiClient from './apiClient';
 import { SIGNUP_URL } from '../constants/apiurl';
 
-export const signup = async (mobileNumber, otp, name,) => {
+export const signup = async (mobileNumber, otp, name) => {
   try {
     const response = await apiClient.post(SIGNUP_URL, {
       mobileNumber,

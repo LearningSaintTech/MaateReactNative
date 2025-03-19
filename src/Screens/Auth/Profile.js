@@ -25,10 +25,10 @@ const Profile = () => {
             <Text style={styles.profileLocation}>H-70, Sector 63, Noida</Text>
           </View>
         </View>
-        <View style={styles.balanceContainer}>
+        {/* <View style={styles.balanceContainer}>
           <Text style={styles.balanceLabel}>Remaining Amount</Text>
           <Text style={styles.balance}>₹2500.00</Text>
-        </View>
+        </View> */}
       </View>
 
       <ScrollView>
@@ -194,7 +194,6 @@ export default Profile;
 
 
 // use of redux in profile screen 
-
 
 // import React from "react";
 // import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";

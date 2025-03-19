@@ -24,6 +24,7 @@ import BottomTabBar from '../components/BottomTabBar';
 import TrackOrderScreen from '../Screens/Auth/TrackOrderScreen';
 import { Provider } from "react-redux";
 import store from "../Redux/store"; 
+import NearRestaurantScreen from '../Screens/Auth/NearRestaurantScreen';
 
 const Stack = createStackNavigator();
 const AppNavigator = () => {
@@ -55,6 +56,7 @@ const AppNavigator = () => {
         <Stack.Screen name="Payment" component={Payment}/>
         <Stack.Screen name="Myorder" component={Myorder}/>
         <Stack.Screen name="TrackOrder" component={TrackOrderScreen}/>
+        <Stack.Screen name="NearRestaurant" component={NearRestaurantScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
     </Provider>

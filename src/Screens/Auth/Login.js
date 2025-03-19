@@ -19,11 +19,20 @@ const Login = ({navigation}) => {
   const [fullName, setFullName] = useState('');
   const [error, setError] = useState('');
 
+  // const handleLogin = () => {
+  //   if (activeTab === 'login') {
+  //     navigation.navigate('Verification');
+  //   } else {
+  //     navigation.navigate('Verification');
+  //   }
+  // };
+
+
   const handleLogin = () => {
-    if (activeTab === 'login') {
-      navigation.navigate('Verification');
+    if (activeTab === "signup") {
+      navigation.navigate("Verification", { name: fullName, mobile: mobile });
     } else {
-      navigation.navigate('Verification');
+      navigation.navigate("Verification", { mobile: mobile });
     }
   };
 
@@ -31,19 +40,19 @@ const Login = ({navigation}) => {
     <View
       style={[
         styles.container,
-        theme === 'dark' ? styles.darkBackground : styles.lightBackground,
+        theme === "dark" ? styles.darkBackground : styles.lightBackground,
       ]}>
       <TouchableOpacity style={styles.skipButton}>
         <Text style={styles.skipText}>Skip</Text>
         <Image
-          source={require('../../assets/icons/rightIcon.png')}
+          source={require("../../assets/icons/rightIcon.png")}
           style={styles.iconStyle}
         />
       </TouchableOpacity>
 
       <View style={styles.logoContainer}>
         <Image
-          source={require('../../assets/images/Splash.png')}
+          source={require("../../assets/images/Splash.png")}
           style={styles.logo}
           resizeMode="contain"
         />
@@ -54,13 +63,13 @@ const Login = ({navigation}) => {
           <TouchableOpacity
             style={[
               styles.tabButton,
-              activeTab === 'login' && styles.activeTab,
+              activeTab === "login" && styles.activeTab,
             ]}
-            onPress={() => setActiveTab('login')}>
+            onPress={() => setActiveTab("login")}>
             <Text
               style={[
                 styles.tabText,
-                activeTab === 'login' && styles.activeTabText,
+                activeTab === "login" && styles.activeTabText,
               ]}>
               Login
             </Text>
@@ -69,13 +78,13 @@ const Login = ({navigation}) => {
           <TouchableOpacity
             style={[
               styles.tabButton,
-              activeTab === 'signup' && styles.activeTab,
+              activeTab === "signup" && styles.activeTab,
             ]}
-            onPress={() => setActiveTab('signup')}>
+            onPress={() => setActiveTab("signup")}>
             <Text
               style={[
                 styles.tabText,
-                activeTab === 'signup' && styles.activeTabText,
+                activeTab === "signup" && styles.activeTabText,
               ]}>
               Sign-up
             </Text>
@@ -95,7 +104,7 @@ const Login = ({navigation}) => {
         />
         {error ? <Text style={styles.errorText}>{error}</Text> : null}
 
-        {activeTab === 'signup' && (
+        {activeTab === "signup" && (
           <>
             <Text style={styles.inputLabel}>Full Name</Text>
             <TextInput
@@ -115,28 +124,28 @@ const Login = ({navigation}) => {
 
         <TouchableOpacity style={styles.googleButton}>
           <Image
-            source={require('../../assets/images/Google.png')}
+            source={require("../../assets/images/Google.png")}
             style={styles.googleIcon}
           />
           <Text style={styles.googleText}>Continue with Google</Text>
         </TouchableOpacity>
       </View>
 
-      <View style={styles.overlay}>
+ <View style={styles.overlay}>
         <TouchableOpacity
           style={styles.button}
           onPress={handleLogin}
           activeOpacity={0.8}>
           <Text style={styles.buttonText}>
-            {activeTab === 'login' ? 'Login' : 'Sign-Up'}
+            {activeTab === "login" ? "Login" : "Sign-Up"}
           </Text>
           <Image
-            source={require('../../assets/icons/arrow.png')}
+            source={require("../../assets/icons/arrow.png")}
             style={styles.icon}
             resizeMode="contain"
           />
         </TouchableOpacity>
-      </View>
+      </View>     
     </View>
   );
 };
@@ -192,11 +201,11 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     alignItems: 'center',
     shadowColor: '#000',
-    shadowOffset: { width: 10, height: 1 }, 
+    shadowOffset: { width: 10, height: 1 }, // Increased height to emphasize bottom shadow
     shadowOpacity: 0.3, // Adjust opacity for better visibility
     shadowRadius: 6, // Spread shadow downwards more
     marginTop: 50,
-    overflow: 'hidden', 
+    overflow: 'hidden', // Ensures shadow does not apply to rounded corners
   }
 ,  
   

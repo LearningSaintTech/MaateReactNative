@@ -21,15 +21,15 @@ const BottomTabBar = () => {
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarStyle: {
-          backgroundColor: 'white',
+          // backgroundColor: 'white',
           borderTopWidth: 0,
           height: 80 + insets.bottom, 
           paddingBottom: insets.bottom, 
           paddingTop: 15,
           borderRadius: 10,
-          shadowColor: '#000',
+          // shadowColor: '#000',
           shadowOffset: { width: 0, height: 4 },
-          shadowOpacity: 0.2,
+          // shadowOpacity: 0.2,
           shadowRadius: 4,
           elevation: 5,
         },
