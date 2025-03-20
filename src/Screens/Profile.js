@@ -21,7 +21,7 @@ const Profile = () => {
         <View style={styles.profileInfo}>
           <Text style={styles.profileName}>Aditya Raj</Text>
           <View style={styles.locationContainer}>
-            <Image source={require("../../assets/images/location.png")} style={styles.smallIcon} />
+            <Image source={require("../assets/images/location.png")} style={styles.smallIcon} />
             <Text style={styles.profileLocation}>H-70, Sector 63, Noida</Text>
           </View>
         </View>
@@ -35,49 +35,49 @@ const Profile = () => {
         {/* First Section */}
         <View style={styles.menuContainer}>
           <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate("ProfileInfo")}>
-            <Image source={require("../../assets/icons/personal.png")} style={styles.menuIcon} />
+            <Image source={require("../assets/icons/personal.png")} style={styles.menuIcon} />
             <Text style={styles.menuText}>Personal Info</Text>
-            <Image source={require("../../assets/icons/arrow.png")} style={styles.chevronIcon} />
+            <Image source={require("../assets/icons/arrow.png")} style={styles.chevronIcon} />
           </TouchableOpacity>
           <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate("Address")}>
-            <Image source={require("../../assets/icons/address.png")} style={styles.menuIcon} />
+            <Image source={require("../assets/icons/address.png")} style={styles.menuIcon} />
             <Text style={styles.menuText}>Addresses</Text>
-            <Image source={require("../../assets/icons/arrow.png")}style={styles.chevronIcon} />
+            <Image source={require("../assets/icons/arrow.png")}style={styles.chevronIcon} />
           </TouchableOpacity>
         </View>
         {/* Second Section */}
         <View style={styles.menuContainer}>
           <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate("Cart")}>
-            <Image source={require("../../assets/icons/cart.png")} style={styles.menuIcon} />
+            <Image source={require("../assets/icons/cart.png")} style={styles.menuIcon} />
             <Text style={styles.menuText}>Cart</Text>
-            <Image source={require("../../assets/icons/arrow.png")}style={styles.chevronIcon} />
+            <Image source={require("../assets/icons/arrow.png")}style={styles.chevronIcon} />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate("Fav")}>
-            <Image source={require("../../assets/icons/favorite.png")} style={styles.menuIcon} />
+            <Image source={require("../assets/icons/favorite.png")} style={styles.menuIcon} />
             <Text style={styles.menuText}>Favourite</Text>
-            <Image source={require("../../assets/icons/arrow.png")}style={styles.chevronIcon} />
+            <Image source={require("../assets/icons/arrow.png")}style={styles.chevronIcon} />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate("Notification")}>
-            <Image source={require("../../assets/icons/notification.png")} style={styles.menuIcon} />
+            <Image source={require("../assets/icons/notification.png")} style={styles.menuIcon} />
             <Text style={styles.menuText}>Notifications</Text>
-            <Image source={require("../../assets/icons/arrow.png")}style={styles.chevronIcon} />
+            <Image source={require("../assets/icons/arrow.png")}style={styles.chevronIcon} />
           </TouchableOpacity>
         </View>
 
         {/* Third Section */}
         <View style={styles.menuContainer}>
           <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate("FAQs")}>
-            <Image source={require("../../assets/icons/faq.png")} style={styles.menuIcon} />
+            <Image source={require("../assets/icons/faq.png")} style={styles.menuIcon} />
             <Text style={styles.menuText}>FAQs</Text>
-            <Image source={require("../../assets/icons/arrow.png")}style={styles.chevronIcon} />
+            <Image source={require("../assets/icons/arrow.png")}style={styles.chevronIcon} />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.menuItem} onPress={() => navigation.navigate("UserReviews")}>
-            <Image source={require("../../assets/icons/reviews.png")} style={styles.menuIcon} />
+            <Image source={require("../assets/icons/reviews.png")} style={styles.menuIcon} />
             <Text style={styles.menuText}>User Reviews</Text>
-            <Image source={require("../../assets/icons/arrow.png")}style={styles.chevronIcon} />
+            <Image source={require("../assets/icons/arrow.png")}style={styles.chevronIcon} />
           </TouchableOpacity>
         </View>
       </ScrollView>

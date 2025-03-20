@@ -24,7 +24,7 @@ const FoodDetail = () => {
       </View>
       <View style={styles.imageContainer}>
         <Image
-          source={require('../../assets/images/Burger.png')}
+          source={require('../assets/images/Burger.png')}
           style={styles.image}
         />
         <TouchableOpacity style={styles.wishlistButton}>
@@ -97,7 +97,7 @@ const FoodDetail = () => {
         <TouchableOpacity  onPress={() => navigation.navigate('Payment')} style={styles.addToCartButton}>
           <Text style={styles.addToCartText}>Add To Cart</Text>
               <Image
-                      source={require('../../assets/icons/arrow.png')}
+                      source={require('../assets/icons/arrow.png')}
                       style={styles.icon}
                       resizeMode="contain"
                     />

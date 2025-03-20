@@ -15,7 +15,7 @@ const Splash = ({ navigation }) => {
     <View style={styles.container}>
       <StatusBar hidden />
       <Image
-        source={require("../../assets/images/Splash.png")}
+        source={require("../assets/images/Splash.png")}
         style={styles.logo}
         resizeMode="contain"
       />

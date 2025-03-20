@@ -337,7 +337,7 @@ import {
   Image,
   FlatList,
 } from 'react-native';
-import HeaderSection from '../../components/HeaderSection';
+import HeaderSection from '../components/HeaderSection';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
 
@@ -348,7 +348,7 @@ const orders = [
     location: 'Rose Garden',
     price: '50',
     originalPrice: '99',
-    image: require('../../assets/images/Burger.png'),
+    image: require('../assets/images/Burger.png'),
   },
   {
     id: '2',
@@ -356,7 +356,7 @@ const orders = [
     location: 'City Square',
     price: '120',
     originalPrice: '199',
-    image: require('../../assets/images/Burger.png'),
+    image: require('../assets/images/Burger.png'),
   },
   {
     id: '3',
@@ -364,7 +364,7 @@ const orders = [
     location: 'Downtown',
     price: '200',
     originalPrice: '299',
-    image: require('../../assets/images/Burger.png'),
+    image: require('../assets/images/Burger.png'),
   },
 ];
 

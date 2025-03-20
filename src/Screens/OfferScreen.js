@@ -10,17 +10,16 @@ import {
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
-import BottomTabBar from '../../components/BottomTabBar'; 
+import BottomTabBar from '../components/BottomTabBar'; 
 
 const {width, height} = Dimensions.get('window');
 
 const offers = [
-  {id: '1', image: require('../../assets/images/Banner1.png')},
-  {id: '2', image: require('../../assets/images/Banner2.png')},
-  {id: '3', image: require('../../assets/images/Banner3.png')},
-  {id: '4', image: require('../../assets/images/Banner4.png')},
+  {id: '1', image: require('../assets/images/Banner1.png')},
+  {id: '2', image: require('../assets/images/Banner2.png')},
+  {id: '3', image: require('../assets/images/Banner3.png')},
+  {id: '4', image: require('../assets/images/Banner4.png')},
 ];
-
 const OfferScreen = () => {
   const navigation = useNavigation();
 

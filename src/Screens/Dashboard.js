@@ -35,13 +35,13 @@
 import React, { useEffect, useState } from "react";
 import { View, FlatList, Modal, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import HeaderSection from "../../components/HeaderSection";
-import SearchBar from "../../components/SearchBar";
-import Carousel from "../../components/carosuel";
-import WeeklyMenuTabs from "../../components/WeeklyMenuTabs";
-import CategoryFilters from "../../components/CategoryFilters";
-import FoodList from "../../components/FoodList";
-import BottomTabBar from "../../components/BottomTabBar";
+import HeaderSection from "../components/HeaderSection";
+import SearchBar from "../components/SearchBar";
+import Carousel from "../components/carosuel";
+import WeeklyMenuTabs from "../components/WeeklyMenuTabs";
+import CategoryFilters from "../components/CategoryFilters";
+import FoodList from "../components/FoodList";
+import BottomTabBar from "../components/BottomTabBar";
 
 const EMAIL_API_URL = "http://192.168.1.26:8080/api/customer/email";
 

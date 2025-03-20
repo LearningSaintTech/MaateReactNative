@@ -6,11 +6,11 @@ import HomeIcon from '../assets/images/Home.png';
 import OfferIcon from '../assets/images/Offer.png';
 import OrderIcon from '../assets/images/MyOrder.png';
 import ProfileIcon from '../assets/images/Profile.png';
-import Profile from '../Screens/Auth/Profile';
+import Profile from '../Screens/Profile';
 import Myorder from './Myorder';
-import Dashboard from '../Screens/Auth/Dashboard';
-import OfferScreen from '../Screens/Auth/OfferScreen';
-import MyOrderScreen from '../Screens/Auth/MyOrderScreen';
+import Dashboard from '../Screens/Dashboard';
+import OfferScreen from '../Screens/OfferScreen';
+import MyOrderScreen from '../Screens/MyOrderScreen';
 
 const Tab = createBottomTabNavigator();
 
